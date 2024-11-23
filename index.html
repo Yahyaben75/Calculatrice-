@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator with Games</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Calculatrice -->
+    <div class="container calc">
+        <h1 class="text-center">Calculator</h1>
+        <input class="input" type="text" id="calculatorInput" placeholder="0" readonly>
+        <div class="buttons">
+            <button class="ac" onclick="clr()">AC</button>
+            <button onclick="back()">⬅️</button>
+            <button onclick="dis('%')">%</button>
+            <button onclick="dis('/')">÷</button>
+            <button onclick="dis('√')">√</button>
+            <button onclick="dis('(')">(</button>
+            <button onclick="dis(')')">)</button>
+            <button onclick="dis('*')">×</button>
+            <button onclick="dis('7')">7</button>
+            <button onclick="dis('8')">8</button>
+            <button onclick="dis('9')">9</button>
+            <button onclick="dis('-')">-</button>
+            <button onclick="dis('4')">4</button>
+            <button onclick="dis('5')">5</button>
+            <button onclick="dis('6')">6</button>
+            <button onclick="dis('+')">+</button>
+            <button onclick="dis('1')">1</button>
+            <button onclick="dis('2')">2</button>
+            <button onclick="dis('3')">3</button>
+            <button onclick="dis('0')">0</button>
+            <button onclick="dis('.')">.</button>
+            <button class="equal" onclick="solve()">=</button>
+        </div>
+    </div>
+
+    <!-- Choix du jeu -->
+    <div id="game-choice" class="hidden">
+        <h2>Choose Game Mode</h2>
+        <button onclick="startTicTacToe(false)">2 Players</button>
+        <button onclick="startTicTacToe(true)">Play vs AI</button>
+    </div>
+
+    <!-- Jeu Tic-Tac-Toe -->
+    <div id="tic-tac-toe" class="hidden">
+        <h2>Tic-Tac-Toe Game</h2>
+        <div class="board">
+            <div class="cell" onclick="makeMove(0)"></div>
+            <div class="cell" onclick="makeMove(1)"></div>
+            <div class="cell" onclick="makeMove(2)"></div>
+            <div class="cell" onclick="makeMove(3)"></div>
+            <div class="cell" onclick="makeMove(4)"></div>
+            <div class="cell" onclick="makeMove(5)"></div>
+            <div class="cell" onclick="makeMove(6)"></div>
+            <div class="cell" onclick="makeMove(7)"></div>
+            <div class="cell" onclick="makeMove(8)"></div>
+        </div>
+        <div id="game-info"></div>
+        <button onclick="backToCalculator()">Back to Calculator</button>
+    </div>
+
+    <!-- Jeu Snake -->
+    <div id="snake-game" class="hidden">
+        <h2>Snake Game</h2>
+        <canvas id="snakeCanvas" width="400" height="400"></canvas>
+        <button onclick="backToCalculator()">Back to Calculator</button>
+    </div>
+</body>
+</html>
